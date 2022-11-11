@@ -1,21 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   decrement,
   increment,
+  reset,
   incrementByAmount,
   incrementAsync,
   incrementIfOdd,
   selectCount,
+  selectStatus,
 } from './counterSlice';
+
 import styles from './Counter.module.css';
 
 export function Counter() {
   const count = useSelector(selectCount);
+  const status = useSelector(selectStatus);
   const dispatch = useDispatch();
-  const [incrementAmount, setIncrementAmount] = useState('2');
+  const [incrementAmount, setIncrementAmount] = useState('11');
 
-  const incrementValue = Number(incrementAmount) || 0;
+  useEffect(() => {
+    setIncrementAmount(isNaN(incrementAmount) ? 0 : (Number(incrementAmount)));
+  },[incrementAmount]);
+
+  // in case the input field is non numeric
+  const incrementValue = incrementAmount;
 
   return (
     <div>
@@ -53,13 +62,20 @@ export function Counter() {
           className={styles.asyncButton}
           onClick={() => dispatch(incrementAsync(incrementValue))}
         >
-          Add Async
+          { status === 'idle' ? 'Add Async' : status }
+
         </button>
         <button
           className={styles.button}
           onClick={() => dispatch(incrementIfOdd(incrementValue))}
         >
           Add If Odd
+        </button>
+        <button
+            className={styles.button}
+            onClick={() => dispatch(reset())}
+        >
+          Clear
         </button>
       </div>
     </div>
