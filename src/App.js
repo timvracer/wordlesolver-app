@@ -1,7 +1,6 @@
 import React from 'react';
 
 import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import { Links } from './features/links/Links';
 import { PatternMaker } from './features/patternMaker/patternMaker';
 import './App.css';
@@ -21,7 +20,18 @@ function App() {
       <p>
         Enter the pattern and click "add" to add to the list
       </p>
-      <PatternMaker />
+      <div className="patternContainer">
+          <div className="testPatternEdit">
+              <PatternMaker value={'00000'}/>
+          </div>
+          <button
+              className="buttonAdd"
+              aria-label="Add the pattern"
+          >
+              Add
+          </button>
+
+      </div>
       <Links />
     </div>
   );

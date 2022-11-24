@@ -13,6 +13,16 @@
   }
 }
 
+.patternContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.testPatternEdit {
+  height: 40px;
+  width: 250px;
+}
+
 .App-header {
   display: flex;
   flex-direction: column;

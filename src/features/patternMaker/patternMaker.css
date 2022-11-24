@@ -3,4 +3,11 @@
 .patternMaker {
     display: flex;
     justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.patternItems {
+    height: 100%;
+    padding-left: 2px;
+    padding-right: 2px;
 }
