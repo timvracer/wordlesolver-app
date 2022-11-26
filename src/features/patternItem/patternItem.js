@@ -13,10 +13,10 @@ export function PatternItem(props) {
             color = '#3a3a3c';
             break;
         case '1':
-            color = '#538d4e';
+            color = '#b59f3b';
             break;
         case '2':
-            color = '#b59f3b';
+            color = '#538d4e';
             break;
         default:
             color = '#000000';

@@ -1,39 +1,25 @@
 import React from 'react';
-
+import Box from '@mui/material/Box';
 import logo from './logo.svg';
 import { Links } from './features/links/Links';
-import { PatternMaker } from './features/patternMaker/patternMaker';
+import { PatternListMaker } from './features/patternListMaker/patternListMaker';
 import './App.css';
 
 function App() {
 
   return (
-    <div className="App">
+    <Box className="App">
       <header className="App-header">
-        <div className="Header">
+        <Box sx={{marginLeft: '30px'}}>
           <span>
             <span className="titleText"> Wordle Solver </span>
             <img src={logo} className="App-logo" alt="logo" />
           </span>
-        </div>
+        </Box>
       </header>
-      <p>
-        Enter the pattern and click "add" to add to the list
-      </p>
-      <div className="patternContainer">
-          <div className="testPatternEdit">
-              <PatternMaker value={'00000'}/>
-          </div>
-          <button
-              className="buttonAdd"
-              aria-label="Add the pattern"
-          >
-              Add
-          </button>
-
-      </div>
+      <PatternListMaker />
       <Links />
-    </div>
+    </Box>
   );
 }
 

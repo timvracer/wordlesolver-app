@@ -1,0 +1,10 @@
+
+
+.patternContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.buttonAdd {
+    margin-left: 10px;
+}

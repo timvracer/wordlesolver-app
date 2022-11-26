@@ -2,15 +2,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getToggle, toggle } from "../../app/data/uiSlice.js"
 
 import './Links.css';
-import styles from '../counter/Counter.module.css';
 
 export function Links() {
   const showLinks = useSelector(getToggle);
   const dispatch = useDispatch();
   return (
-    <span>
+    <div style={ {marginTop: 30} } >
       <button
-          className={styles.button}
+          className='button'
           style={ {marginRight: 8, minWidth: 45 } }
           aria-label="Toggle links section"
           onClick={() => dispatch(toggle())}
@@ -55,6 +54,6 @@ export function Links() {
           React Redux
         </a>
       </span>
-    </span>
+    </div>
   );
 }

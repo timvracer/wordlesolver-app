@@ -15,11 +15,8 @@ export function PatternMaker(props) {
 
 
     var itemClick = (index, value) => {
-        console.log(index, value, patternArray);
         patternArray[index] = String((Number(value) + 1) % 3);
-        console.log(patternArray);
         const newPattern = patternArray.reduce((item, val) => val = item + val, '');
-        console.log(newPattern);
         setPattern(newPattern);
         if (onChange) onChange(newPattern);
     };
